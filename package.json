@@ -1,0 +1,33 @@
+{
+  "name": "node-md2pdf",
+  "version": "0.1.0",
+  "description": "convert markdown to pdf",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/siakas/node-md2pdf.git"
+  },
+  "author": "siakas",
+  "license": "MIT",
+  "dependencies": {
+    "log-util": "^1.2.0",
+    "markdown-pdf": "^8.1.1",
+    "mkdirp": "^0.5.1",
+    "node-filelist": "^1.0.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^8.5.0",
+    "del": "^3.0.0",
+    "exec": "^0.2.1",
+    "glob": "^7.1.2",
+    "gulp": "^3.9.1",
+    "gulp-csso": "^3.0.1",
+    "gulp-notify": "^3.2.0",
+    "gulp-postcss": "^7.0.1",
+    "gulp-sass": "^4.0.1",
+    "run-sequence": "^2.2.1"
+  }
+}
