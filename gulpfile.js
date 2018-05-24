@@ -12,8 +12,34 @@ const exec         = require('child_process').exec;   // node からシェルコ
 const sequence     = require('run-sequence');         // タスクの逐次処理
 
 
-/* Sass コンパイル設定
- * ---------------------------------------------------------------------- */
+/*
+ * PDF 生成
+ * Sass コンパイル後、マークダウンファイルを PDF に変換する
+ * ------------------------------------------------ */
+gulp.task('build', (callback) => {
+    sequence(
+        'clean.css',
+        'clean.pdf',
+        'sass',
+        'makePDF'
+    );
+});
+
+
+/*
+ * ファイルの削除
+ * ------------------------------------------------ */
+gulp.task('clean.css', () => {
+    return del('./css/');
+});
+gulp.task('clean.pdf', () => {
+    return del('./file/pdf/');
+});
+
+
+/*
+ * Sass コンパイル
+ * ------------------------------------------------ */
 const AUTOPREFIXER_BROWSERS = [
     'last 2 versions',
     'ie >= 11',
@@ -26,11 +52,6 @@ const PROCESSORS = [
 const SASS_OPTIONS = {
     outputStyle : 'expanded'
 };
-
-
-/*
- * Sass コンパイル
- * ------------------------------------------------ */
 gulp.task('sass', () => {
     return gulp
         .src('./sass/style.scss')
@@ -41,11 +62,13 @@ gulp.task('sass', () => {
 
 
 /*
- * ファイルの削除
+ * PDF 変換処理の実行
  * ------------------------------------------------ */
-gulp.task('clean.css', () => {
-    return del('./css/');
-});
-gulp.task('clean.pdf', () => {
-    return del('./file/pdf/');
+gulp.task('makePDF', (cb) => {
+    exec('node app.js', (err) => {
+        if (err) {
+            return cb(err);
+        }
+        cb();
+    });
 });
