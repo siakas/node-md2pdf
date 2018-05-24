@@ -57,7 +57,11 @@ gulp.task('sass', () => {
         .src('./sass/style.scss')
         .pipe(sass(SASS_OPTIONS).on('error', notify.onError( error => { return error.message; } )))
         .pipe(postcss(PROCESSORS))
+        .pipe(csso())
         .pipe(gulp.dest('./css/'));
+});
+gulp.task('sass.watch', () => {
+    gulp.watch(['./sass/**/*.{scss,css}'], ['sass']);
 });
 
 
