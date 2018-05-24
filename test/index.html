@@ -47,5 +47,194 @@
 
 <p>上記のように記述すると、以下のように表示されます。</p>
 
+<p><a href="http://www.yahoo.co.jp/" title="Yahoo">Yahoo home</a>
+<a href="https://www.google.co.jp/" title="google">google home</a></p>
+
+<h3 id="img-">img 画像の埋め込み</h3>
+
+<p>画像を埋め込むには<code>![画像の代替文字](画像のURL &quot;画像のタイトル&quot;)</code>と記述します。現行のmarkdown-pdfでは、絶対パスの指定が必須です。</p>
+
+<pre><code class="lang-markdown">![サンプル画像](/path-to-your/markdown2pdf/file/markdown/1600x900.png &quot;サンプル画像&quot;)
+</code></pre>
+
+<h3 id="table-">table テーブル</h3>
+
+<p>テーブルは以下のように、<code>|</code>で囲みます。左寄せや右寄せ、中央揃いは行の区切りに<code>:</code>を用いて表します。<code>:</code>の位置によって寄せ方が変わります。</p>
+
+<pre><code class="lang-markdown">| 左寄せ      |        右寄せ |     中央      |
+|:-----------|------------:|:------------:|
+| This       |        This |     This     |
+| column     |      column |    column    |
+| will       |        will |     will     |
+| be         |          be |      be      |
+| left       |       right |    center    |
+| aligned    |     aligned |   aligned    |
+</code></pre>
+
+<p>上記のように記述すると、以下のように表示されます。</p>
+
+<table>
+<thead>
+<tr>
+<th style="text-align:left">左寄せ</th>
+<th style="text-align:right">右寄せ</th>
+<th style="text-align:center">中央</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">This</td>
+<td style="text-align:right">This</td>
+<td style="text-align:center">This</td>
+</tr>
+<tr>
+<td style="text-align:left">column</td>
+<td style="text-align:right">column</td>
+<td style="text-align:center">column</td>
+</tr>
+<tr>
+<td style="text-align:left">will</td>
+<td style="text-align:right">will</td>
+<td style="text-align:center">will</td>
+</tr>
+<tr>
+<td style="text-align:left">be</td>
+<td style="text-align:right">be</td>
+<td style="text-align:center">be</td>
+</tr>
+<tr>
+<td style="text-align:left">left</td>
+<td style="text-align:right">right</td>
+<td style="text-align:center">center</td>
+</tr>
+<tr>
+<td style="text-align:left">aligned</td>
+<td style="text-align:right">aligned</td>
+<td style="text-align:center">aligned</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="ul-ol-">ul、ol リスト表記</h3>
+
+<p>リスト表記は<code>-</code>と半角スペースを先頭に記述していきます。番号付きリスト表記は<code>1.</code>と半角スペースを先頭に記述していきます。またリストの説明を入れたい場合には先頭に半角スペース4つを追加し、前後を空行で挟みます。</p>
+
+<pre><code class="lang-markdown">- hoge
+- fuga
+- foo
+
+    リストの説明(先頭に半角スペース4つを追加し、前後を空行で挟む)
+
+- bar
+
+
+1. hoge
+2. fuga
+3. foo
+
+    リストの説明(先頭に半角スペース4つを追加し、前後を空行で挟む)
+
+3. bar
+</code></pre>
+
+<p>上記のように記述すると、以下のように表示されます。</p>
+
+<ul>
+<li>hoge</li>
+<li>fuga</li>
+<li><p>foo</p>
+<p>  リストの説明(先頭に半角スペース4つを追加し、前後を空行で挟む)</p>
+</li>
+<li><p>bar</p>
+</li>
+</ul>
+
+<ol>
+<li>hoge</li>
+<li>fuga</li>
+<li><p>foo</p>
+<p> リストの説明(先頭に半角スペース4つを追加し、前後を空行で挟む)</p>
+</li>
+<li><p>bar</p>
+</li>
+</ol>
+
+<h3 id="em-strong-">em、strong 強調</h3>
+
+<p>強調を表すには<code>*</code>で囲みます。</p>
+
+<pre><code class="lang-markdown">em要素を使った強調は*em*と記述します。
+strong要素を使った強調は**strong**と記述します。
+</code></pre>
+
+<p>上記のように記述すると、以下のように表示されます。</p>
+
+<p>em要素を使った強調は<em>em</em>と記述します。
+strong要素を使った強調は<strong>strong</strong>と記述します。</p>
+
+<h3 id="code-block-">code block コード・ブロック</h3>
+
+<p>コード・ブロック(本文とは切り離した複数行のプログラムコード)は<code>｀</code>3つで囲み、言語名を記述します。テーマやエンジンがサポートしている言語によってはシンタックスハイライトしてくれます。</p>
+
+<pre><code class="lang-markdown">｀｀｀ js
+// 本文とは切り離した場所に複数行のプログラムコードを表示させます
+console.log(&quot;Hoge&quot;);
+｀｀｀
+</code></pre>
+
+<p>上記のように記述すると、以下のように表示されます。</p>
+
+<pre><code class="lang-js">// 本文とは切り離した場所に複数行のプログラムコードを表示させます
+console.log(&quot;Hoge&quot;);
+</code></pre>
+
+<h3 id="del-">del 打ち消し</h3>
+
+<p>打ち消しを表すには<code>~</code>2つで囲みます。</p>
+
+<pre><code class="lang-markdown">~~打ち消したい文字~~
+</code></pre>
+
+<p>上記のように記述すると、以下のように表示されます。</p>
+
+<p><del>打ち消したい文字</del></p>
+
+<h3 id="kbd-">kbd キーボード</h3>
+
+<p>キーボードはmarkdownではサポートされていないため、タグを直接記述する必要があるようです。markdownはhtmlが混在していてもそのまま表示してくれます。</p>
+
+<pre><code class="lang-markdown">キーボードは&lt;kbd&gt;Alt&lt;/kbd&gt;のように記述します
+</code></pre>
+
+<p>上記のように記述すると、以下のように表示されます。</p>
+
+<p>キーボードは<kbd>Alt</kbd>のように記述します</p>
+
+<h3 id="blockquote-">blockquote 引用</h3>
+
+<p>引用を表すには<code>&gt;</code>と半角スペースを先頭に記述していきます。また引用のネストも可能です。上記のようにmarkdownを記述すると、以下のように表示されます。</p>
+
+<pre><code class="lang-markdown">&gt; 引用
+&gt; &gt; 引用のネスト
+
+サイトの引用
+&gt; Yahoo(サイト名)
+&gt; &lt;cite&gt;Yahoo! - &lt;a href=&quot;http://yahoo.co.jp&quot; title=&quot;&quot;&gt;yahoo&lt;/a&gt; &lt;/cite&gt;
+</code></pre>
+
+<p>上記のように記述すると、以下のように表示されます。</p>
+
+<blockquote>
+<p>引用</p>
+<blockquote>
+<p>引用のネスト</p>
+</blockquote>
+</blockquote>
+<p>サイトの引用</p>
+<blockquote>
+<p>Yahoo(サイト名)
+<cite>Yahoo! - <a href="http://yahoo.co.jp" title="">yahoo</a> </cite></p>
+</blockquote>
+
 </body>
 </html>
