@@ -1,0 +1,18 @@
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  padding: 1cm;
+  font-family: $font-sans;
+  font-size: $font-default-size;
+  line-height: $font-line-height;
+  color: #000;
+  background: transparent;
+  text-rendering: optimizelegibility;
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
